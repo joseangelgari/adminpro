@@ -1,3 +1,82 @@
-<p>
-  progress works!
-</p>
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Progress </h5>
+        <div class="progress mb-4">
+          <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" [attr.ariaValuenow]="progress"  aria-valuemin="0" aria-valuemax="100" [style.width]="progress + '%'"></div>
+        </div>
+        <div class="progress mb-4">
+          <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" [attr.ariaValuenow]="progress"  aria-valuemin="0" aria-valuemax="100" [style.width]="progress + '%'"></div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" [attr.ariaValuenow]="progress"  aria-valuemin="0" aria-valuemax="100" [style.width]="progress + '%'"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <button class="btn btn-info" type="button" (click)="cambiarProgress(-10)">
+              <i class="mdi mdi-minus mx-auto"></i>
+            </button>
+          </div>
+          <input type="text" class="form-control" [(ngModel)]="progress">
+          <div class="input-group-append">
+            <button class="btn btn-info" type="button" (click)="cambiarProgress(+10)">
+              <i class="mdi mdi-plus mx-auto"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <button class="btn btn-primary" type="button">
+              <i class="mdi mdi-minus mx-auto"></i>
+            </button>
+          </div>
+          <input type="text" class="form-control">
+          <div class="input-group-append">
+            <button class="btn btn-primary" type="button">
+              <i class="mdi mdi-plus mx-auto"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <button class="btn btn-success" type="button">
+              <i class="mdi mdi-minus mx-auto"></i>
+            </button>
+          </div>
+          <input type="text" class="form-control">
+          <div class="input-group-append">
+            <button class="btn btn-success" type="button">
+              <i class="mdi mdi-plus mx-auto"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
