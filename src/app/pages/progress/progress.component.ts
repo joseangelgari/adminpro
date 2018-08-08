@@ -3,26 +3,25 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-progress',
   templateUrl: './progress.component.html',
-  styles: []
+  styleUrls: ['./progress.component.css']
 })
 export class ProgressComponent implements OnInit {
 
-  progress: number = 40;
+  progress1: number = 40;
+  progress2: number = 80;
+  progress100: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  cambiarProgress (valor : number):void{
-
-    this.progress += valor;
-
-    if(this.progress <= 0){
-      this.progress = 0;
-    } else if(this.progress >= 100){
-      this.progress = 100;
+  updateProgress(event):void{
+    if(event == 100){
+      this.progress100 = true;
+      setTimeout(()=>{ 
+        this.progress100 = false;
+      }, 3000);
     }
   }
-
 }

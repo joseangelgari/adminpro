@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -5,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { APP_ROUTES } from './app.routes';
 
 // MODULES
+import { FormsModule } from '@angular/forms';
 import { PagesModule } from './pages/pages.module';
 
 import { AppComponent } from './app.component';
@@ -20,9 +22,11 @@ import { RegisterComponent } from './register/register.component';
     RegisterComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     APP_ROUTES,
-    PagesModule
+    PagesModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

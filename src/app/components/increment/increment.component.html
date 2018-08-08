@@ -1,0 +1,17 @@
+<h3>
+  {{leyend}}
+</h3>
+
+<div class="input-group">
+  <div class="input-group-prepend">
+    <button class="btn btn-info" type="button" (click)="cambiarProgress(-10)">
+      <i class="mdi mdi-minus mx-auto"></i>
+    </button>
+  </div>
+  <input #inputProgress type="number" class="form-control" [(ngModel)]="progress" (ngModelChange)="onChangeInput($event)" maxlength="100" pattern="^[0-9]{9}$">
+  <div class="input-group-append">
+    <button class="btn btn-info" type="button" (click)="cambiarProgress(+10)">
+      <i class="mdi mdi-plus mx-auto"></i>
+    </button>
+  </div>
+</div>  

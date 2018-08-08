@@ -1,3 +1,10 @@
-<p>
-  graphic1 works!
-</p>
+<div class="row">
+  <div class="col-6 mb-3" *ngFor="let graphic of graphics">
+    <div class="card">
+      <div class="card-body">
+        <h3>{{graphic.leyend}}</h3>
+        <app-graphic-donuts [data]="graphic.data" [labels]="graphic.labels" chartType="doughnut"></app-graphic-donuts>
+      </div>
+    </div>
+  </div>
+</div>
