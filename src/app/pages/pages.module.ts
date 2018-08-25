@@ -7,6 +7,7 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { ProgressComponent } from "./progress/progress.component";
 import { Graphic1Component } from "./graphic1/graphic1.component";
 import { GraphicDonutsComponent } from '../components/graphic-donuts/graphic-donuts.component';
+import { PromisesComponent } from './promises/promises.component';
 
 import { SharedModule } from '../shared/shared.module';
 import { PAGES_ROUTES } from './pages.routes';
@@ -16,6 +17,7 @@ import { CommonModule } from '@angular/common';
 
 // ng2-charts
 import {ChartsModule } from 'ng2-charts';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
     declarations: [
@@ -24,7 +26,9 @@ import {ChartsModule } from 'ng2-charts';
         ProgressComponent,
         Graphic1Component,
         IncrementComponent,
-        GraphicDonutsComponent
+        GraphicDonutsComponent,
+        PromisesComponent,
+        RxjsComponent
     ],
     exports: [
         PagesComponent,

@@ -71,7 +71,6 @@
     $('.sidebar [data-toggle="collapse"]').on("click", function(event) {
       //Updating content wrapper height to sidebar height on expanding a menu in sidebar
       var clickedItem = $(this);
-      console.log(clickedItem);
       if (clickedItem.attr('aria-expanded') === 'false') {
         var scrollTop = scroller.scrollTop() - 20;
       } else {
