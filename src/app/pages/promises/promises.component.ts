@@ -9,8 +9,6 @@ export class PromisesComponent implements OnInit {
 
   constructor() {
 
-    
-
     this.countThree()
       .then(() => {
         console.log("Resolve");

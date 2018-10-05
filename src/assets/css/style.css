@@ -7620,12 +7620,6 @@ button,
 select {
   text-transform: none; }
 
-button,
-html [type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button; }
-
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -13851,21 +13845,21 @@ input:focus {
         font-size: 0.9rem;
         font-weight: 500; }
         .navbar .navbar-menu-wrapper .navbar-nav .nav-item .search-input .input-group .form-control:-ms-input-placeholder {
-          color: #434a54;
+          color: #c9c8c8;
           font-size: 0.9rem;
-          font-weight: 500; }
+          font-weight: 300; }
         .navbar .navbar-menu-wrapper .navbar-nav .nav-item .search-input .input-group .form-control:-moz-placeholder {
-          color: #434a54;
+          color: #c9c8c8;
           font-size: 0.9rem;
-          font-weight: 500; }
+          font-weight: 300; }
         .navbar .navbar-menu-wrapper .navbar-nav .nav-item .search-input .input-group .form-control::-moz-placeholder {
-          color: #434a54;
+          color: #c9c8c8;
           font-size: 0.9rem;
-          font-weight: 500; }
+          font-weight: 300; }
         .navbar .navbar-menu-wrapper .navbar-nav .nav-item .search-input .input-group .form-control::-webkit-input-placeholder {
-          color: #434a54;
+          color: #c9c8c8;
           font-size: 0.9rem;
-          font-weight: 500; }
+          font-weight: 300; }
       .navbar .navbar-menu-wrapper .navbar-nav .nav-item.notification-dropdown .dropdown-item {
         border-bottom: 1px solid rgba(50, 50, 61, 0.1); }
         .navbar .navbar-menu-wrapper .navbar-nav .nav-item.notification-dropdown .dropdown-item:last-child {
@@ -15085,20 +15079,20 @@ pre {
     padding: 0.5rem 0.75rem; }
   .form-control:-ms-input-placeholder {
     font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    color: #32323d; }
+    font-weight: lighter;
+    color: #c9c8c8; }
   .form-control:-moz-placeholder {
     font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    color: #32323d; }
+    font-weight: lighter;
+    color: #c9c8c8; }
   .form-control::-moz-placeholder {
     font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    color: #32323d; }
+    font-weight: lighter;
+    color: #c9c8c8; }
   .form-control::-webkit-input-placeholder {
     font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    color: #32323d; }
+    font-weight: lighter;
+    color: #c9c8c8; }
 
 select {
   font-family: "Roboto", sans-serif;
@@ -15497,13 +15491,13 @@ dl {
     border-color: rgba(0, 0, 0, 0.2);
     color: #000; }
     .auth .auth-form-light .form-control:-ms-input-placeholder {
-      color: #000; }
+      color: #c9c8c8; }
     .auth .auth-form-light .form-control:-moz-placeholder {
-      color: #000; }
+      color: #c9c8c8; }
     .auth .auth-form-light .form-control::-moz-placeholder {
-      color: #000; }
+      color: #c9c8c8; }
     .auth .auth-form-light .form-control::-webkit-input-placeholder {
-      color: #000; }
+      color: #c9c8c8; }
 
 .auth .auth-form-transparent {
   background: transparent;

@@ -7,38 +7,39 @@
             <div class="auth-form-light text-left p-5">
               <h2>Register</h2>
               <h4 class="font-weight-light">Hello! let's get started</h4>
-              <form class="pt-4">
-                <form>
+              <form ngNativeValidate class="pt-4" [formGroup]="forma" (ngSubmit)="registerUser()">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Username</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username">
-                    <i class="mdi mdi-account"></i>
+                    <label for="inputName">Name</label>
+                    <input formControlName="name" name="name" type="text" class="form-control" id="inputName" aria-describedby="emailHelp" placeholder="Username" required>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                    <i class="mdi mdi-eye"></i>
+                    <label for="inputEmail">Email</label>
+                    <input formControlName="email" name="email" type="email" class="form-control" id="inputEmail" placeholder="Email" required>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword2">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Confirm password">
-                    <i class="mdi mdi-eye"></i>
+                    <label for="inputPassword1">Password</label>
+                    <input formControlName="password" name="password" type="password" class="form-control" id="inputPassword1" placeholder="Password" required>
                   </div>
-                  <div class="mt-5">
-                    <a class="btn btn-block btn-primary btn-lg font-weight-medium" href="../../index.html">Register</a>
+                  <div class="form-group">
+                    <label for="InputPassword2">Password</label>
+                    <input formControlName="password2" name="password2" type="password" class="form-control" id="InputPassword2" placeholder="Confirm password" required>
+                    <small class="text-danger" *ngIf="forma.errors?.noEquals && !forma.pristine">The passwords have to be equals</small>
+                    
                   </div>
                   <div class="mt-2 w-75 mx-auto">
                     <div class="form-check form-check-flat">
                       <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input">
+                        <input formControlName="check" name="check" type="checkbox" class="form-check-input">
                         I accept terms and conditions
                       </label>
                     </div>
                   </div>
-                  <div class="mt-2 text-center">
-                    <a href="login.html" class="auth-link text-black">Already have an account? <span class="font-weight-medium">Sign in</span></a>
+                  <div class="mt-2">
+                    <button class="btn btn-block btn-primary btn-lg font-weight-medium border-0" type="submit">Register</button>
                   </div>
-                </form>                  
+                  <div class="mt-2 text-center">
+                    <a href="#/login" class="auth-link text-black">Already have an account? <span class="font-weight-bold">Sign in</span></a>
+                  </div>
               </form>
             </div>
           </div>

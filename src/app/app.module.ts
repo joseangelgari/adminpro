@@ -6,7 +6,7 @@ import { NgModule } from '@angular/core';
 import { APP_ROUTES } from './app.routes';
 
 // MODULES
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PagesModule } from './pages/pages.module';
 import { ServiceModule } from './services/service.module';
 
@@ -28,6 +28,7 @@ import { RegisterComponent } from './register/register.component';
     APP_ROUTES,
     PagesModule,
     FormsModule,
+    ReactiveFormsModule,
     ServiceModule
   ],
   providers: [],
