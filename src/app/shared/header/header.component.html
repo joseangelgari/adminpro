@@ -110,16 +110,38 @@
             </a>
           </div>
         </li>
-        <li class="nav-item lang-dropdown d-none d-sm-block">
-          <a class="nav-link" href="#">
-            <p class="mb-0">English <i class="flag-icon flag-icon-gb"></i></p>
-          </a>
-        </li>
-        <li class="nav-item d-none d-sm-block profile-img">
-          <a class="nav-link profile-image" href="#">
-            <img src="assets/images/faces/face4.jpg" alt="profile-img">
+
+        <li class="nav-item dropdown mail-dropdown">
+          <a class="nav-link profile-image" id="profileDropdown" href="#" data-toggle="dropdown">
+            <img src="assets/images/faces/face4.jpg" alt="profile-img" >
             <span class="online-status online bg-success"></span>
           </a>
+          <div class="dropdown-menu navbar-dropdown mail-notification dropdownAnimation" aria-labelledby="profileDropdown">
+            <a class="dropdown-item" href="#">
+              <div class="sender">
+                <p class="Sende-name">
+                  <i class="mdi mdi-account"></i>
+                  Mi profile
+                </p>
+              </div>
+            </a>
+            <a class="dropdown-item" href="#">
+              <div class="sender">
+                <p class="Sende-name">
+                  <i class="mdi mdi-settings"></i>
+                  Account settings
+                </p>
+              </div>
+            </a>
+            <a class="dropdown-item" (click)="_usuarioService.logout()">
+              <div class="sender">
+                <p class="Sende-name">
+                  <i class="mdi mdi-logout"></i>
+                  Logout
+                </p>
+              </div>
+            </a>
+          </div>
         </li>
       </ul>
       <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center ml-auto" type="button" data-toggle="offcanvas">

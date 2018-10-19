@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+declare function init_plugin();
+
 @Component({
   selector: 'app-progress',
   templateUrl: './progress.component.html',
@@ -11,7 +13,7 @@ export class ProgressComponent implements OnInit {
   progress2: number = 80;
   progress100: boolean = false;
 
-  constructor() { }
+  constructor() {init_plugin();}
 
   ngOnInit() {
   }

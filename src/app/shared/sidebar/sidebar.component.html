@@ -1,16 +1,42 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
   <ul class="nav">
+
+    <li class="nav-item nav-category">
+      <span class="nav-link">PERSONAL</span>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#personal" aria-expanded="false">
+        <span class="menu-title">Administrar</span>
+        <i class="icon-speedometer menu-icon"></i>
+      </a>
+      <div class="collapse" id="personal">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" [routerLink]="['/?']" >Mi profile</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" [routerLink]="['/?']" >Account settings</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" href="#" (click)="_usuarioService.logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+
     <li class="nav-item nav-category">
       <span class="nav-link">GENERAL</span>
     </li>
     <li class="nav-item" *ngFor="let item of _sidebar.menu">
-      <a class="nav-link" data-toggle="collapse" href="#{{item.title}}" aria-expanded="false" >
+      <a class="nav-link" data-toggle="collapse" href="#{{item.title}}" aria-expanded="false">
         <span class="menu-title">{{item.title}}</span>
         <i class="{{item.icon}}"></i>
       </a>
       <div class="collapse" id="{{item.title}}">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item" *ngFor="let subitem of item.submenu" routerLinkActive="active"> <a class="nav-link" [routerLink]="[subitem.url]">{{subitem.title}}</a></li>
+          <li class="nav-item" *ngFor="let subitem of item.submenu" routerLinkActive="active">
+            <a class="nav-link" [routerLink]="[subitem.url]" >{{subitem.title}}</a>
+          </li>
         </ul>
       </div>
     </li>

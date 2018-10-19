@@ -15476,13 +15476,13 @@ dl {
     border-color: rgba(255, 255, 255, 0.2);
     color: #ffffff; }
     .auth .auth-form-dark .form-control:-ms-input-placeholder {
-      color: #ffffff; }
+      color: #999999; }
     .auth .auth-form-dark .form-control:-moz-placeholder {
-      color: #ffffff; }
+      color: #999999; }
     .auth .auth-form-dark .form-control::-moz-placeholder {
-      color: #ffffff; }
+      color: #999999; }
     .auth .auth-form-dark .form-control::-webkit-input-placeholder {
-      color: #ffffff; }
+      color: #999999; }
 
 .auth .auth-form-light {
   background: #ffffff;

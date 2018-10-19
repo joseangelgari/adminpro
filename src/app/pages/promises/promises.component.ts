@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+declare function init_plugin();
+
 @Component({
   selector: 'app-promises',
   templateUrl: './promises.component.html',
@@ -8,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class PromisesComponent implements OnInit {
 
   constructor() {
-
+    init_plugin();
     this.countThree()
       .then(() => {
         console.log("Resolve");

@@ -16,14 +16,6 @@ export class SidebarService {
         {title: 'Promises', url: '/promises'},
         {title: 'Rxjs', url: '/rxjs'}
       ]
-    },
-    {
-      title: 'Outside',
-      icon: 'icon-layers menu-icon',
-      submenu: [
-        {title: 'Login', url: '/login'},
-        {title: 'Register', url: '/register'}
-      ]
     }
   ]
 
