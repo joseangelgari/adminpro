@@ -23,7 +23,8 @@
               "./node_modules/@mdi/font/css/materialdesignicons.min.css",
               "./node_modules/simple-line-icons/css/simple-line-icons.css",
               "./node_modules/flag-icon-css/css/flag-icon.min.css",
-              "src/assets/css/style.css"
+              "src/assets/css/style.css",
+              "src/styles.css"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",

@@ -4,6 +4,7 @@ import { Usuario } from '../../models/usuario.model';
 import { URL_SERVICES } from '../../config/config';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { UploadFileService } from '../upload-file/upload-file.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,8 @@ export class UsuarioService {
 
   constructor(
     public http: HttpClient,
-    public router: Router
+    public router: Router,
+    public _uploadFileService: UploadFileService
   ) { 
     this.loadUserFromLocal();
     console.log("Servicio de usuario OK")
@@ -55,8 +57,19 @@ export class UsuarioService {
 
   }
 
-  loginGoogle( token: string ){
+  updateUser(usuario: Usuario){
+    let url = URL_SERVICES + '/usuario/' + usuario._id;
+    url += '?token=' + this.token;
 
+    return this.http.put(url, usuario)
+      .pipe(map((resp:any)=>{
+        localStorage.setItem('usuario', JSON.stringify(resp.usuario));
+        swal('Usuario actualizado', usuario.email, 'success');
+        return resp;
+      }));
+  }
+
+  loginGoogle( token: string ){
     let url = URL_SERVICES + '/login/google';
     return this.http.post( url, {token})
       .pipe(map((res: any)=>{
@@ -91,5 +104,17 @@ export class UsuarioService {
     localStorage.removeItem('usuario');
 
     this.router.navigate(['/login']);
+  }
+
+  changeImage( file: File, id: string){
+    this._uploadFileService.uploadFile(file, 'usuarios', id)
+      .then( (resp:any) => {
+        this.usuario.img = resp.usuario.img;
+        swal('Imagen actualizada', resp.usuario.email, 'success');
+        localStorage.setItem('usuario', JSON.stringify(resp.usuario));
+      })
+      .catch( resp =>{
+        console.log(resp);
+      })
   }
 }

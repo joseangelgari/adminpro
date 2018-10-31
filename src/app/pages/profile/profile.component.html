@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-12 col-md-7 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">User profile</h4>
+        <p class="card-description">
+          Resume of your user's information
+        </p>
+        <form ngNativeValidate #f="ngForm" (ngSubmit)="update(f.value)" class="forms-sample">
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend bg-secondary">
+                <span class="input-group-text bg-transparent border-secondary"><i class="mdi mdi-account text-white"></i></span>
+              </div>
+              <input type="text" class="form-control" placeholder="Username " aria-label="Username" aria-describedby="colored-addon1"
+                [ngModel]="usuario.name" name="name" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend bg-secondary">
+                <span class="input-group-text bg-transparent border-secondary"><i class="mdi mdi mdi-email text-white"></i></span>
+              </div>
+              <input type="email" class="form-control" placeholder="Enter email" aria-label="email" aria-describedby="colored-addon2"
+                [ngModel]="usuario.email" name="email" required [disabled]="usuario.google">
+            </div>
+            <small class="text-secondary" *ngIf="usuario.google">You're Google's user. You can't change email.</small>
+          </div>
+          <div class="text-right">
+            <button type="submit" class="btn btn-success">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class=" col-12 col-md-5 grid-margin">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Profile picture</h4>
+        <div class="box-profile-img d-flex justify-content-center">
+          <img *ngIf="!previewImage" [src]="usuario.img | imagen" alt="" class="img-fluid rounded-circle mb-3 profile-img-form">
+          <img *ngIf="previewImage" [src]="previewImage" alt="" class="img-fluid rounded-circle mb-3 profile-img-form">
+          <div class="box-change-profile-img rounded-circle c-pointer">
+            <i class="mdi mdi-camera text-white"></i>
+          </div>
+        </div>
+        <p class="card-description">
+          You can update your profile picture
+        </p>
+        <form class="forms-sample">
+          <div class="form-group">
+            <input type="file" name="img[]" class="file-upload-default" (change)="selectImage($event.target.files[0])">
+            <div class="input-group col-xs-12 file-upload-browse">
+              <input type="text" class="form-control file-upload-info  c-pointer" disabled="" placeholder="Upload Image">
+              <span class="input-group-append">
+                <button class=" btn btn-info" type="button" >Select</button>
+              </span>
+            </div>
+          </div>
+          <div class="text-right">
+            <button type="submit" class="btn btn-success" [disabled]="!imageUpload" (click)="changeImage()">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

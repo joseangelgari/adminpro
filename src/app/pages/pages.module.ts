@@ -8,8 +8,10 @@ import { ProgressComponent } from "./progress/progress.component";
 import { Graphic1Component } from "./graphic1/graphic1.component";
 import { GraphicDonutsComponent } from '../components/graphic-donuts/graphic-donuts.component';
 import { PromisesComponent } from './promises/promises.component';
+import { ProfileComponent } from './profile/profile.component';
 
 import { SharedModule } from '../shared/shared.module';
+import { PipesModule } from "../pipes/pipes.module";
 import { PAGES_ROUTES } from './pages.routes';
 // TEMPORAL
 import { IncrementComponent } from '../components/increment/increment.component';
@@ -28,7 +30,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
         IncrementComponent,
         GraphicDonutsComponent,
         PromisesComponent,
-        RxjsComponent
+        RxjsComponent,
+        ProfileComponent
     ],
     exports: [
         PagesComponent,
@@ -41,7 +44,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
         SharedModule,
         PAGES_ROUTES,
         FormsModule,
-        ChartsModule
+        ChartsModule,
+        PipesModule
     ]
 
 })

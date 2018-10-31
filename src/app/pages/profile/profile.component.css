@@ -1,0 +1,28 @@
+.box-profile-img{
+  position: relative;
+}
+
+.profile-img-form{
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+}
+
+
+.box-change-profile-img{
+  position: absolute;
+  height: 6rem;
+  width: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, .5);
+  opacity: 0;
+}
+.box-change-profile-img:hover{
+  opacity: 1;
+}
+
+.box-change-profile-img{
+  font-size: 1.5rem;
+}
