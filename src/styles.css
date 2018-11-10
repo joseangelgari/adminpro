@@ -2,3 +2,7 @@
 .c-pointer{
   cursor: pointer;
 }
+
+.cover-img{
+  object-fit: cover;
+}

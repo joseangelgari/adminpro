@@ -20,6 +20,8 @@ import { CommonModule } from '@angular/common';
 // ng2-charts
 import {ChartsModule } from 'ng2-charts';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { ModalChangeImgComponent } from '../components/modal-change-img/modal-change-img.component';
 
 @NgModule({
     declarations: [
@@ -31,7 +33,9 @@ import { RxjsComponent } from './rxjs/rxjs.component';
         GraphicDonutsComponent,
         PromisesComponent,
         RxjsComponent,
-        ProfileComponent
+        ProfileComponent,
+        UsuariosComponent,
+        ModalChangeImgComponent
     ],
     exports: [
         PagesComponent,

@@ -20,7 +20,6 @@ export class UsuarioService {
     public _uploadFileService: UploadFileService
   ) { 
     this.loadUserFromLocal();
-    console.log("Servicio de usuario OK")
   }
 
   isLogin(){
@@ -63,7 +62,9 @@ export class UsuarioService {
 
     return this.http.put(url, usuario)
       .pipe(map((resp:any)=>{
-        localStorage.setItem('usuario', JSON.stringify(resp.usuario));
+        if(usuario._id === this.usuario._id){
+          localStorage.setItem('usuario', JSON.stringify(resp.usuario));
+        }
         swal('Usuario actualizado', usuario.email, 'success');
         return resp;
       }));
@@ -76,7 +77,6 @@ export class UsuarioService {
         this.saveLocalStorage(res.id, res.token, res.usuario);
         return true;
       }));
-
   }
 
   login(usuario: Usuario, remember: boolean = false){
@@ -116,5 +116,24 @@ export class UsuarioService {
       .catch( resp =>{
         console.log(resp);
       })
+  }
+
+  loadUsers( from: number = 0 ){
+    let url = URL_SERVICES + '/usuario?from=' + from;
+    return this.http.get(url);
+  }
+
+  searchUsers(value: string){
+    let url = URL_SERVICES + '/busqueda/coleccion/usuarios/' + value;
+    return this.http.get(url).pipe(map((resp:any) => resp.usuarios));
+  }
+
+  deleteUser(usuario: Usuario){
+    let url = URL_SERVICES + '/usuario/' + usuario._id + '?token=' + this.token;
+    
+    return this.http.delete(url).pipe(map((resp:any) => {
+      swal('Usuario eliminado', resp.usuario.email, 'success');
+      return true;
+    } ));
   }
 }
