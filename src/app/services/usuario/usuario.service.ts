@@ -116,7 +116,7 @@ export class UsuarioService {
       .catch( resp =>{
         console.log(resp);
       })
-  }
+  } 
 
   loadUsers( from: number = 0 ){
     let url = URL_SERVICES + '/usuario?from=' + from;

@@ -1,0 +1,67 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+          <input #input (keyup)="searchMedico(input.value)" type="text" class="form-control" aria-describedby="helpId" placeholder="Buscar médico...">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-2" *ngIf="loading">
+  <div class="col-12">
+    <div class="alert alert-warning text-center">
+      <i class="fa fa-refresh fa-spin fa-2x my-2"></i>
+      <span class="d-block">Cargando médicos</span>
+      <span class="d-block"><small>Cógela suave, mi llave...</small></span>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-2" *ngIf="!loading">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Médicos registrados</h4>
+        <button class="btn btn-primary mb-3" [routerLink]="['/medico', 'nuevo']">
+          <i class="icon icon-plus"></i>
+          Crear Médico
+        </button>
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <td>Imagen</td>
+                <td>Nombre</td>
+                <td>Hospital</td>
+                <td>Usuario</td>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let medico of medicos">
+                  <td><img src="{{ medico.img | imagen: 'medicos' }}" class="img-fluid rounded-circle cover-img"></td>
+                  <td>{{medico.name}}</td>
+                  <td *ngIf="medico.usuario">{{medico.usuario.email}}</td>
+                  <td *ngIf="!medico.usuario">El medico se creó solo</td>
+                  <td *ngIf="medico.hospital">{{medico.hospital.name}}</td>
+                  <td *ngIf="!medico.hospital">El medico no tiene hospital</td>
+                  <td>
+                    <button [routerLink]="['/medico', medico._id]" class="btn btn-success mr-2">
+                      <i class="fa fa-pencil mr-0"></i>
+                    </button>
+                    <button (click)="deleteMedico(medico._id)" class="btn btn-danger">
+                      <i class="fa fa-trash mr-0"></i>
+                    </button>
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- <div class="text-center mt-3">
+            <i (click)="changeFrom(-5)" class="fa fa-chevron-left mr-3 c-pointer"></i>
+            <i (click)="changeFrom(5)" class="fa fa-chevron-right c-pointer"></i>
+          </div> -->
+      </div>
+    </div>
+  </div>
+</div>

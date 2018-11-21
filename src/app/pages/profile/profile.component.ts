@@ -5,9 +5,9 @@ import { Usuario } from "../../models/usuario.model";
 declare function init_plugin();
 
 @Component({
-  selector: "app-profile",
+  selector: "app-profile", 
   templateUrl: "./profile.component.html",
-  styleUrls: ['./profile.component.css']
+  styles: []
 })
 export class ProfileComponent implements OnInit {
 

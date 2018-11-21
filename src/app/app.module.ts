@@ -20,7 +20,7 @@ import { RegisterComponent } from './register/register.component';
     AppComponent,
     LoginComponent,
     Nopagefound404Component,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     CommonModule,

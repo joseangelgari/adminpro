@@ -22,6 +22,9 @@ import {ChartsModule } from 'ng2-charts';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ModalChangeImgComponent } from '../components/modal-change-img/modal-change-img.component';
+import { HospitalesComponent } from './hospitales/hospitales.component';
+import { MedicosComponent } from './medicos/medicos.component';
+import { MedicoComponent } from './medicos/medico.component';
 
 @NgModule({
     declarations: [
@@ -35,7 +38,10 @@ import { ModalChangeImgComponent } from '../components/modal-change-img/modal-ch
         RxjsComponent,
         ProfileComponent,
         UsuariosComponent,
-        ModalChangeImgComponent
+        ModalChangeImgComponent,
+        HospitalesComponent,
+        MedicosComponent,
+        MedicoComponent
     ],
     exports: [
         PagesComponent,

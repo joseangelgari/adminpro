@@ -1,0 +1,87 @@
+<div class="row">
+  <div class="col-12 col-md-4 grid-margin stretch-card" [ngClass]="{'col-md-6': !medico._id}">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Medico: {{medico.name}}</h4>
+        <form ngNativeValidate #f="ngForm" (ngSubmit)="saveMedico(f)" class="forms-sample">
+          <div class="form-group"> 
+            <div class="input-group">
+              <div class="input-group-prepend bg-secondary">
+                <span class="input-group-text bg-transparent border-secondary"><i class="mdi mdi-account text-white"></i></span>
+              </div>
+              <input type="text" class="form-control" placeholder="Nombre del médico" [(ngModel)]="medico.name" name="name" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend bg-secondary">
+                <span class="input-group-text bg-transparent border-secondary"><i class="mdi mdi mdi-hospital-building text-white"></i></span>
+              </div>
+              <select name="hospital" [(ngModel)]="medico.hospital" class="form-control" (change)="changeHospital($event.target.value)" required>
+                <option value="" selected>Selecciona un hospital</option>
+                <option *ngFor="let hospital of hospitales" [value]="hospital._id">{{hospital.name}}</option>
+              </select>
+              
+            </div>
+          </div>
+          <div class="text-right">
+            <button [routerLink]="['/medicos']" class="btn btn-secondary mr-2">Regresar</button>
+            <button type="submit" class="btn btn-success ">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class=" col-12 col-md-4 grid-margin stretch-card" [ngClass]="{'col-md-6': !medico._id}">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Hospital information</h4>
+        <div class="box-profile-img d-flex justify-content-center">
+          <img [src]="hospital.img | imagen: 'hospitales'" alt="" class="img-fluid rounded-circle mb-3 profile-img-form">
+        </div>
+        <p class="card-description text-center" *ngIf="medico.hospital != ''">
+          <strong>{{hospital.name}}</strong>
+        </p>
+        <p class="card-description text-center" *ngIf="hospital.usuario">
+          <strong>Usuario: </strong>{{hospital.usuario.email}}
+        </p>
+        <p class="card-description text-center" *ngIf="!hospital.usuario && medico.hospital != ''">
+          El usuario no aparece
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class=" col-12 col-md-4 grid-margin" *ngIf="medico._id">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Medico picture</h4>
+        <div class="box-profile-img d-flex justify-content-center">
+          <img *ngIf="!previewImage" [src]="medico.img | imagen: 'medicos'" alt="" class="img-fluid rounded-circle mb-3 profile-img-form">
+          <img *ngIf="previewImage" [src]="previewImage" alt="" class="img-fluid rounded-circle mb-3 profile-img-form">
+          <div class="box-change-profile-img rounded-circle c-pointer">
+            <i class="mdi mdi-camera text-white"></i>
+          </div>
+        </div>
+        <p class="card-description">
+          You can update medico profile picture
+        </p>
+        <form class="forms-sample">
+          <div class="form-group">
+            <input type="file" name="img[]" class="file-upload-default" (change)="selectImage($event.target.files[0])">
+            <div class="input-group col-xs-12 file-upload-browse">
+              <input type="text" class="form-control file-upload-info  c-pointer" disabled="" placeholder="Upload Image">
+              <span class="input-group-append">
+                <button class=" btn btn-info" type="button" >Select</button>
+              </span>
+            </div>
+          </div>
+          <div class="text-right">
+            <button type="submit" class="btn btn-success" [disabled]="!imageUpload" (click)="changeImage()">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

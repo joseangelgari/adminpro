@@ -8,7 +8,7 @@
       </div>
       <div class="modal-body text-center">
         <div class="box-profile-img d-flex justify-content-center">
-          <img *ngIf="!previewImage" [src]="_modalImgService.img | imagen" alt="" class="img-fluid rounded-circle mb-3 profile-img-form">
+          <img *ngIf="!previewImage" [src]="_modalImgService.img | imagen: _modalImgService.type" alt="" class="img-fluid rounded-circle mb-3 profile-img-form">
           <img *ngIf="previewImage" [src]="previewImage" alt="" class="img-fluid rounded-circle mb-3 profile-img-form">
           <div class="box-change-profile-img rounded-circle c-pointer">
             <i class="mdi mdi-camera text-white"></i>

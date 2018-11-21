@@ -3,7 +3,7 @@ import { UsuarioService, ModalImgService } from "src/app/services/service.index"
 import { Usuario } from "src/app/models/usuario.model";
 
 declare function init_plugin();
-declare var swal;
+declare var swal; 
 
 @Component({
   selector: "app-usuarios",

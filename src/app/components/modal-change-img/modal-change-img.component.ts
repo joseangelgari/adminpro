@@ -45,7 +45,7 @@ export class ModalChangeImgComponent implements OnInit {
     if(this.imageUpload){
       this._uploadFileService.uploadFile(this.imageUpload, this._modalImgService.type, this._modalImgService.id)
       .then( (resp:any) => {
-        swal('Imagen actualizada', resp.usuario.email, 'success');
+        swal('Imagen actualizada', this._modalImgService.type, 'success');
         this._modalImgService.notification.emit(resp);
         this.closeModal();
       })
