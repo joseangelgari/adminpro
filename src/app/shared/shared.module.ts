@@ -6,6 +6,7 @@ import { HeaderComponent } from "./header/header.component";
 import { SidebarComponent } from "./sidebar/sidebar.component";
 import { BreadcrumbsComponent } from "./breadcrumbs/breadcrumbs.component";
 import { PipesModule } from "../pipes/pipes.module";
+import { ModalChangeImgComponent } from '../components/modal-change-img/modal-change-img.component';
 
 @NgModule({
     imports: [
@@ -17,11 +18,13 @@ import { PipesModule } from "../pipes/pipes.module";
         HeaderComponent,
         SidebarComponent,
         BreadcrumbsComponent,
+        ModalChangeImgComponent,
     ],
     exports: [
         HeaderComponent,
         SidebarComponent,
         BreadcrumbsComponent,
+        ModalChangeImgComponent,
     ]
 })
 

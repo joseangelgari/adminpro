@@ -1,3 +1,4 @@
+import { Usuario } from 'src/app/models/usuario.model';
 
 export class Hospital{
 
@@ -5,6 +6,7 @@ export class Hospital{
     public name: string,
     public img?: string,
     public _id?: string,
+    public usuario?: Usuario
   ){}
 
 }

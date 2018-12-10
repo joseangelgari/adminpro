@@ -7,12 +7,12 @@
     <p class="page-name d-none d-lg-block">Hi, {{ usuario.name }}</p>
     <ul class="navbar-nav ml-lg-auto">
       <li class="nav-item">
-        <form class="mt-2 mt-md-0 d-none d-lg-block search-input">
+        <div class="mt-2 mt-md-0 d-none d-lg-block search-input">
           <div class="input-group">
             <span class="input-group-addon d-flex align-items-center"><i class="icon-magnifier icons"></i></span>
-            <input type="text" class="form-control" placeholder="Search...">
+            <input type="text" class="form-control" placeholder="Search & enter" #input (keyup.enter)="search(input.value)">
           </div>
-        </form>
+        </div>
       </li>
       <li class="nav-item dropdown mail-dropdown">
         <a class="nav-link count-indicator" id="MailDropdown" href="#" data-toggle="dropdown">

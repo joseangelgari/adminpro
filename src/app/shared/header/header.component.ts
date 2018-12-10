@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from 'src/app/services/service.index';
 import { Usuario } from '../../models/usuario.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,8 @@ export class HeaderComponent implements OnInit {
   usuario: Usuario;
 
   constructor(
-    public _usuarioService: UsuarioService
+    public _usuarioService: UsuarioService,
+    public router: Router
   ) { 
     this.usuario = _usuarioService.usuario;
   }
@@ -20,4 +22,12 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  search(input: String){
+    if(!input){
+      this.router.navigate(['/dashboard']);
+      return;
+    }
+
+    this.router.navigate(['/search', input]);
+  }
 }
